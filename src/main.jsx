@@ -54,7 +54,7 @@ function App() {
 
     <section className="about section-pink wave-bottom" id="about">
       <div className="wrap about-grid">
-        <div className="portrait-frame"><div className="portrait-pin"/><img src="/om-portrait.png" alt="Om Barmaiya portrait"/><span className="portrait-caption">OM BARMAIYA · Bhopal, India</span></div>
+        <div className="portrait-frame"><div className="portrait-pin"/><img src="/om.png" alt="Om Barmaiya portrait"/><span className="portrait-caption">OM BARMAIYA · Bhopal, India</span></div>
         <div className="about-copy"><p className="eyebrow dark-eyebrow">A LITTLE ABOUT ME</p><h2>Hello, <em>there!</em></h2><p>I'm <strong>Om Barmaiya</strong>, a Computer Science & Engineering student at Bansal Institute of Science and Technology, Bhopal. I enjoy building useful interfaces and learning how full-stack systems work from frontend to database.</p><p>My current interests span web development, mobile apps, AI/ML, and computer vision. I prefer practical projects that make me solve real engineering problems—not just follow tutorials.</p><div className="tech-logos"><div><Code2/><span>WEB DEV</span></div><div><Smartphone/><span>MOBILE</span></div><div><BrainCircuit/><span>AI / ML</span></div><div><Database/><span>BACKEND</span></div></div></div>
       </div><span className="decor-star star-a">✦</span><span className="decor-star star-b">✳</span>
     </section>
