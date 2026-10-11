@@ -3,12 +3,12 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Github, Linkedin, Code2, Menu, X, 
 import './style.css';
 
 const skills = [
-  { title: 'LANGUAGES', items: [['JavaScript', 78], ['Java', 72], ['Python', 72], ['HTML & CSS', 82]] },
+  { title: 'LANGUAGES', items: [['JavaScript', 78], ['Java', 72], ['Python', 72], ['HTML & CSS', 82], ["SQL",75]] },
   { title: 'FRONTEND & MOBILE', items: [['React', 75], ['Tailwind CSS', 78], ['React Native / Expo', 65], ['Redux Toolkit', 60]] },
   { title: 'BACKEND', items: [['Node.js & Express', 68], ['REST APIs', 70], ['Authentication', 62], ['FastAPI', 55]] },
-  { title: 'DATABASES', items: [['MongoDB', 68], ['PostgreSQL', 62], ['Supabase', 65], ['Firebase', 55]] },
-  { title: 'TOOLS & PLATFORMS', items: [['Git & GitHub', 75], ['Vite', 78], ['Postman', 62], ['Linux', 70]] },
-  { title: 'CORE FUNDAMENTALS', items: [['Data Structures', 65], ['OOP', 70], ['DBMS', 62], ['Problem Solving', 65]] },
+  { title: 'DATABASES', items: [['MongoDB', 68], ['PostgreSQL', 62], ['Supabase', 65], ['Firebase', 55], ["Redis",75]] },
+  { title: 'TOOLS & PLATFORMS', items: [['Git & GitHub', 75], ['Vercel', 82], ['Postman', 62], ['Linux', 70], ["Docker",65],["Render",84]] },
+  { title: 'CORE FUNDAMENTALS', items: [['Data Structures', 65], ['OOP', 70], ['DBMS', 62],["Computer Networking",70],['Operating System',70], ['Problem Solving', 65]] },
 ];
 const projects = [
   { no: '01', tag: 'MOBILE APP · PRODUCT CONCEPT', title: 'Camera Check', type: 'Computer vision workflow', description: 'A mobile-first capture flow designed to check blur, glare, lighting, framing, and distance before an image is submitted. Includes ArUco marker guidance for calibration and size estimation.', stack: ['React Native', 'JavaScript', 'FastAPI', 'OpenCV', 'PostgreSQL'], icon: Smartphone, tone: 'peach' },
@@ -19,7 +19,7 @@ const projects = [
 ];
 const process = [
   ['01', 'Understand', 'Clarify the problem, intended users, constraints, and what a successful outcome should look like.'],
-  ['02', 'Design', 'Map the user flow and shape a responsive interface before adding unnecessary complexity.'],
+  ['02', 'Design', 'Map the user flow and shape a responsive interfacce before adding unnecessary complexity.'],
   ['03', 'Build', 'Develop in small, testable pieces and connect the frontend to reliable APIs and data models.'],
   ['04', 'Improve', 'Test edge cases, fix rough edges, and iterate based on what actually works.'],
 ];
