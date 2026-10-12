@@ -96,7 +96,7 @@ function App() {
   return <main>
     <div className="cursor-spotlight" style={{ left: `${mousePos.x}px`, top: `${mousePos.y}px` }} />
     <section className="hero" id="home">
-      <img className="hero-image" src="/om-portrait.png" alt="Illustrated portrait of Om Barmaiya at a laptop" />
+      <img className="hero-image" src="./om-portrait.png" alt="Illustrated portrait of Om Barmaiya at a laptop" />
       <div className="hero-overlay" />
       <header className="header wrap">
         <a className="brand" href="#home">Om<span>.</span></a>
@@ -142,7 +142,7 @@ function App() {
               <circle cx="232" cy="50" r="3.5" fill="#f3cbaf" stroke="#480922" strokeWidth="1.5" />
             </svg>
           </div>
-          <img src="/om.png" alt="Om Barmaiya portrait"/>
+          <img src="./om.png" alt="Om Barmaiya portrait"/>
           <span className="portrait-caption">OM BARMAIYA · Bhopal, India</span>
         </div>
         <div className="about-copy"><p className="eyebrow dark-eyebrow">A LITTLE ABOUT ME</p><h2>Hello, <em>there!</em></h2><p>I'm <strong>Om Barmaiya</strong>, a Computer Science & Engineering student at Bansal Institute of Science and Technology, Bhopal. I enjoy building useful interfaces and learning how full-stack systems work from frontend to database.</p><p>My current interests span web development, mobile apps, AI/ML, and computer vision. I prefer practical projects that make me solve real engineering problems—not just follow tutorials.</p><div className="tech-logos"><div><Code2/><span>WEB DEV</span></div><div><Smartphone/><span>MOBILE</span></div><div><BrainCircuit/><span>AI / ML</span></div><div><Database/><span>BACKEND</span></div></div></div>
