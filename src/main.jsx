@@ -40,11 +40,18 @@ const process = [
 ];
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', message: '', consent: false });
   const [sent, setSent] = useState(false);
   const [aboutDropped, setAboutDropped] = useState(false);
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
   const portraitRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     const onMove = (e) => setMousePos({ x: e.clientX, y: e.clientY });
@@ -95,15 +102,17 @@ function App() {
   const submit = e => { e.preventDefault(); const subject = encodeURIComponent(`Portfolio enquiry from ${form.name}`); const body = encodeURIComponent(`${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`); window.location.href = `mailto:ombarmaiyapersonal@gmail.com?subject=${subject}&body=${body}`; setSent(true); };
   return <main>
     <div className="cursor-spotlight" style={{ left: `${mousePos.x}px`, top: `${mousePos.y}px` }} />
-    <section className="hero" id="home">
-      <img className="hero-image" src="./om-portrait.png" alt="Illustrated portrait of Om Barmaiya at a laptop" />
-      <div className="hero-overlay" />
-      <header className="header wrap">
+    <header className={`header-nav ${scrolled ? 'scrolled' : ''}`}>
+      <div className="header-inner wrap">
         <a className="brand" href="#home">Om<span>.</span></a>
         <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={19}/> : <Menu size={19}/>}</button>
         <nav className={menuOpen ? 'navigation open' : 'navigation'}>{nav.map(([label, href]) => <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>)}</nav>
         <a className="hire-pill" href="#contact">Let's Talk <ArrowUpRight size={14}/></a>
-      </header>
+      </div>
+    </header>
+    <section className="hero" id="home">
+      <img className="hero-image" src="./om-portrait.png" alt="Illustrated portrait of Om Barmaiya at a laptop" />
+      <div className="hero-overlay" />
       <div className="social-rail"><a href="https://github.com/ombarmaiya1" aria-label="GitHub"><Github size={17}/></a><a href="https://www.linkedin.com/" aria-label="LinkedIn"><Linkedin size={17}/></a><a href="https://github.com/ombarmaiya1" aria-label="Code"><Code2 size={17}/></a></div>
       <div className="hero-content wrap">
         <div className="floating-badge badge-top"><Sparkles size={13}/><span>Full-Stack & Gen-AI</span></div>
