@@ -1238,6 +1238,11 @@ textarea {
   color: #f9d9b9
 }
 
+.project-visual.purple {
+  background: #641d4b;
+  color: #ffd9ec;
+}
+
 .project-visual-top,
 .project-visual-bottom {
   display: flex;
@@ -1343,6 +1348,71 @@ textarea {
 
 .text-link:hover {
   color: #ee9b7d
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-family: var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+
+.project-link-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.project-link-btn.live-btn {
+  background: var(--cream);
+  color: var(--wine);
+  border: 1px solid var(--cream);
+  box-shadow: 0 4px 12px rgba(249, 217, 185, 0.16);
+}
+
+.project-link-btn.live-btn:hover {
+  background: #ffffff;
+  color: #2a0514;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(249, 217, 185, 0.35);
+}
+
+.project-link-btn.live-btn:hover svg {
+  transform: scale(1.15);
+}
+
+.project-link-btn.git-btn {
+  background: rgba(249, 217, 185, 0.08);
+  color: var(--cream);
+  border: 1px solid rgba(249, 217, 185, 0.24);
+}
+
+.project-link-btn.git-btn:hover {
+  background: rgba(249, 217, 185, 0.18);
+  color: #ffffff;
+  border-color: rgba(249, 217, 185, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.project-link-btn.git-btn:hover svg:last-child {
+  transform: translate(2px, -2px);
 }
 
 .journey-section {
@@ -2175,6 +2245,16 @@ textarea {
 
   .text-link {
     padding-top: 18px
+  }
+
+  .project-links {
+    padding-top: 16px;
+    gap: 8px;
+  }
+
+  .project-link-btn {
+    padding: 7px 12px;
+    font-size: 10.5px;
   }
 
   .journey-section {

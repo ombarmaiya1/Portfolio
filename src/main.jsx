@@ -11,26 +11,42 @@ const skills = [
   { title: 'CORE FUNDAMENTALS', items: [['Data Structures', 65], ['OOP', 70], ['DBMS', 62],["Computer Networking",70],['Operating System',70], ['Problem Solving', 65]] },
 ];
 const projects = [
-{
-no: '01',
-tag: 'FULL-STACK WEB APPLICATION',
-title: 'LinkedIn Clone',
-type: 'Professional networking platform',
-description: 'A LinkedIn-inspired web application featuring user authentication, a social feed, post creation, comments, and editable professional profiles. Built with a REST API and token-based authentication.',
-stack: ['React', 'Vite', 'Node.js', 'Express.js', 'MongoDB'],
-icon: Users,
-tone: 'cream'
-},  { no: '02', tag: 'FULL-STACK PRODUCT', title: 'Dabba.', type: 'Food delivery experience', description: 'A multi-role food delivery product concept for customers, restaurants, riders, and admins, with a focus on a clear ordering flow and a professional interface.', stack: ['React', 'Vite', 'Tailwind CSS', 'Node.js'], icon: ReceiptText, tone: 'pink' },
-{
-  no: '03',
-  tag: 'FULL-STACK WEB APPLICATION',
-  title: 'Chit-Chat',
-  type: 'Real-time messaging platform',
-  description: 'A modern chat application designed for seamless real-time communication, featuring conversations, message delivery, and a clean, responsive interface.',
-  stack: ['React', 'Vite', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO'],
-  icon: MessageCircle,
-  tone: 'purple'
-}, 
+  {
+    no: '01',
+    tag: 'FULL-STACK WEB APPLICATION',
+    title: 'LinkedIn Clone',
+    type: 'Professional networking platform',
+    description: 'A LinkedIn-inspired web application featuring user authentication, a social feed, post creation, comments, and editable professional profiles. Built with a REST API and token-based authentication.',
+    stack: ['React', 'Vite', 'Node.js', 'Express.js', 'MongoDB'],
+    icon: Users,
+    tone: 'cream',
+    gitlink: 'https://github.com/ombarmaiya1/LinkedIn-Clone',
+    livelink: 'https://linkedin-clone-demo.vercel.app',
+  },
+  {
+    no: '02',
+    tag: 'FULL-STACK PRODUCT',
+    title: 'Dabba.',
+    type: 'Food delivery experience',
+    description: 'A multi-role food delivery product concept for customers, restaurants, riders, and admins, with a focus on a clear ordering flow and a professional interface.',
+    stack: ['React', 'Vite', 'Tailwind CSS', 'Node.js'],
+    icon: ReceiptText,
+    tone: 'pink',
+    gitlink: 'https://github.com/ombarmaiya1/DABBA',
+    livelink: 'https://dabba-demo.vercel.app',
+  },
+  {
+    no: '03',
+    tag: 'FULL-STACK WEB APPLICATION',
+    title: 'Chit-Chat',
+    type: 'Real-time messaging platform',
+    description: 'A modern chat application designed for seamless real-time communication, featuring conversations, message delivery, and a clean, responsive interface.',
+    stack: ['React', 'Vite', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO'],
+    icon: MessageCircle,
+    tone: 'pink',
+    gitlink: 'https://github.com/ombarmaiya1/Chit-Chat',
+    livelink: 'https://chit-chat-psi-blush.vercel.app/',
+  },
 ];
 const process = [
   ['01', 'Understand', 'Clarify the problem, intended users, constraints, and what a successful outcome should look like.'],
@@ -167,7 +183,7 @@ function App() {
 
     <section className="process-section section-cream grid-bg-light" id="process"><div className="wrap process-layout"><div className="process-intro reveal-on-scroll"><span className="section-chip chip-pink">My Process</span><h2>From first idea to <em>working software.</em></h2><p>I try to keep the process simple: understand the need, build the right thing, and improve it through testing.</p><span className="hand-note">Make it useful first ↗</span></div><div className="process-path">{process.map((item, i) => <article className={`process-card process-${i+1} reveal-on-scroll reveal-delay-${i+1}`} key={item[0]}><span className="process-number">{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p><span className="card-pin"/></article>)}</div></div></section>
 
-    <section className="projects-section section-dark grid-bg" id="projects"><div className="wrap"><div className="section-heading project-heading reveal-on-scroll"><span className="section-chip">Selected Builds & Experiments</span><h2>Work that speaks<br/>for <em>itself.</em></h2><p>A selection of web, mobile, and computer-vision projects I've worked on or explored.</p></div><div className="project-list">{projects.map((p, idx) => {const Icon = p.icon; return <article className={`project-card reveal-on-scroll reveal-delay-${(idx % 2) + 1}`} key={p.no}><div className={`project-visual ${p.tone}`}><div className="project-visual-top"><span>{p.tag}</span><span>{p.no}</span></div><div className="project-illustration"><Icon size={62} strokeWidth={1.1}/><span>{p.title}</span><small>{p.type}</small></div><div className="project-visual-bottom"><span>OM / PROJECT {p.no}</span><span>↗</span></div></div><div className="project-info"><div className="project-title-row"><span className="project-number">{p.no}</span><div><span className="project-tag">{p.tag}</span><h3>{p.title}</h3></div></div><p>{p.description}</p><div className="tag-list">{p.stack.map(s => <span key={s}>{s}</span>)}</div><a className="text-link" href="https://github.com/ombarmaiya1" target="_blank" rel="noreferrer">Explore GitHub <ArrowUpRight size={14}/></a></div></article>; })}</div></div></section>
+    <section className="projects-section section-dark grid-bg" id="projects"><div className="wrap"><div className="section-heading project-heading reveal-on-scroll"><span className="section-chip">Selected Builds & Experiments</span><h2>Work that speaks<br/>for <em>itself.</em></h2><p>A selection of web, mobile, and computer-vision projects I've worked on or explored.</p></div><div className="project-list">{projects.map((p, idx) => {const Icon = p.icon; const gitUrl = p.gitlink || p.gitLink || p.github; const liveUrl = p.livelink || p.liveLink || p['live link'] || p.liveDemo; const primaryLink = liveUrl || gitUrl || '#'; return <article className={`project-card reveal-on-scroll reveal-delay-${(idx % 2) + 1}`} key={p.no}><a className={`project-visual ${p.tone}`} href={primaryLink} target={primaryLink !== '#' ? '_blank' : undefined} rel="noreferrer" title={liveUrl ? `View Live Demo: ${p.title}` : gitUrl ? `View Code: ${p.title}` : p.title}><div className="project-visual-top"><span>{p.tag}</span><span>{p.no}</span></div><div className="project-illustration"><Icon size={62} strokeWidth={1.1}/><span>{p.title}</span><small>{p.type}</small></div><div className="project-visual-bottom"><span>OM / PROJECT {p.no}</span><span>↗</span></div></a><div className="project-info"><div className="project-title-row"><span className="project-number">{p.no}</span><div><span className="project-tag">{p.tag}</span><h3>{p.title}</h3></div></div><p>{p.description}</p><div className="tag-list">{p.stack.map(s => <span key={s}>{s}</span>)}</div><div className="project-links">{liveUrl && <a className="project-link-btn live-btn" href={liveUrl} target="_blank" rel="noreferrer"><ExternalLink size={13}/><span>Live Demo</span></a>}{gitUrl && <a className="project-link-btn git-btn" href={gitUrl} target="_blank" rel="noreferrer"><Github size={13}/><span>GitHub Repo</span><ArrowUpRight size={13}/></a>}</div></div></article>; })}</div></div></section>
 
     <section className="journey-section section-pink wave-top" id="journey"><div className="wrap"><div className="section-heading centered dark-heading reveal-on-scroll"><span className="section-chip chip-dark">Learning & Building</span><h2>Experience is built <em>project by project.</em></h2><p>My current journey is focused on turning coursework and self-learning into practical software.</p></div><div className="journey-grid"><article className="journey-card reveal-on-scroll reveal-delay-1"><span className="journey-date">CURRENT</span><span className="journey-type">EDUCATION + PROJECTS</span><h3>Student Developer</h3><h4>Computer Science & Engineering</h4><p>Building projects while developing stronger foundations in programming, data structures, frontend engineering, and backend APIs.</p><div className="tag-list"><span>React</span><span>Java</span><span>Python</span><span>Node.js</span></div></article><article className="journey-card reveal-on-scroll reveal-delay-2"><span className="journey-date">ONGOING</span><span className="journey-type">SELF-DIRECTED LEARNING</span><h3>Full-Stack Development</h3><h4>Web & Mobile Applications</h4><p>Practicing responsive UI, authentication flows, data modelling, API integration, and mobile app development.</p><div className="tag-list"><span>MERN</span><span>React Native</span><span>PostgreSQL</span></div></article><article className="journey-card reveal-on-scroll reveal-delay-3"><span className="journey-date">EXPLORING</span><span className="journey-type">AI / ML</span><h3>Computer Vision</h3><h4>Applied problem solving</h4><p>Exploring OCR and image-quality checks, with an emphasis on useful feedback and realistic engineering constraints.</p><div className="tag-list"><span>Python</span><span>FastAPI</span><span>OCR</span></div></article></div></div><span className="decor-star star-c">✦</span></section>
 
