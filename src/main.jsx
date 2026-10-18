@@ -24,12 +24,12 @@ tone: 'cream'
 {
   no: '03',
   tag: 'FULL-STACK WEB APPLICATION',
-  title: 'Chatterly',
+  title: 'Chit-Chat',
   type: 'Real-time messaging platform',
   description: 'A modern chat application designed for seamless real-time communication, featuring conversations, message delivery, and a clean, responsive interface.',
   stack: ['React', 'Vite', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO'],
   icon: MessageCircle,
-  tone: 'pink'
+  tone: 'purple'
 }, 
 ];
 const process = [
