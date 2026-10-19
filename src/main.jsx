@@ -21,7 +21,7 @@ const projects = [
     icon: Users,
     tone: 'cream',
     gitlink: 'https://github.com/ombarmaiya1/LinkedIn-Clone',
-    livelink: 'https://linked-in-clone-one-gilt.vercel.app',
+    livelink: 'https://linked-in-clone-one-gilt.vercel.app/',
   },
   {
     no: '02',
